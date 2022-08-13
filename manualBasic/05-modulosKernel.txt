@@ -44,7 +44,7 @@ modprobe -r nome-do-módulo
 rmmod nome-do-módulo
 OBS: Em caso de dependências rodando juntamente com o módulo, o modprobe kill 
 nele SE FOR APENAS aquele módulo que precisava do depêndente!, ja o rmmod só
-irá remover o módulo passado no parâmetro!, OS DEPÊNDENTES CINTUNUARAM A RODAR!
+irá remover o módulo passado no parâmetro!, OS DEPÊNDENTES CONTINUARAM A RODAR!
 
 
 ---------------------->[OBTENDO INFORMAÇÕES DE UM MÓDULO]<------------------------
@@ -61,7 +61,7 @@ CAMINHO dos módulos do systemd aonde possuí essas config: /etc/udev/rules.d
 CARREGAR um módulo durante o boot: /etc/modules-load.d
 
 
---------------------->[INPEDINDO O CARREGAMENTO DE UM MÓDULO]<--------------------
+--------------------->[IMPEDINDO O CARREGAMENTO DE UM MÓDULO]<--------------------
 
 ~Como IMPEDIR o carregamento de um módulo:
 CAMINHO para configurar isto: /etc/modprobe.d/*conf
