@@ -1,1 +1,3 @@
 -- Conceituando: Estudos realizados em 2021.
+-- Fonte: Curso GNU com Debian do prof Kretcheu (36 Videos raiz + novos lançamentos) -> Faltando assistir os novos conteúdos!
+-- Playlist Link: https://www.youtube.com/watch?v=SZMIL87CyVE&list=PLuf64C8sPVT9L452PqdyYCNslctvCMs_n 
