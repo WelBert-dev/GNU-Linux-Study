@@ -1,9 +1,0 @@
-linux essentials:
-https://lcnsqr.com/curso-linux-essentials
-
-topico 1:
-https://lcnsqr.com/curso-linux-essentials/topico-1-a-comunidade-linux-e-carreira-em-codigo-aberto
-
-
-outro site bom para aprendizado GNU:
-https://www.guiafoca.org/guiaonline/inicianteintermediario/ch01.html
