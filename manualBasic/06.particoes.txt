@@ -1,0 +1,47 @@
+
+Conceito: Journaling: Tica todas ordens de escrita
+sync <--- Manda ordem de escrita para o kernel, (meio que força ele)
+
+CAMINHO para verificar se possuimos o modulo necessário para ler x arquivo:
+cat /proc/filesystems 
+------------------>[Para listar os DEVICES conectados]<---------------------
+
+- fdisk -l <--- Lista todos DEVICES conectados
+
+CAMINHO dos DEVICES: cat /proc/partitions
+
+------------------>[Criar FS/Formatar]<---------------------------------------
+
+- fdisk /dev/dispositivo -> abre as opções de formatação (ai é so ler as opções)
+
+
+
+------------------>[Para verificar INTEGRIDADE de um FS]<-----------------------
+
+- fsck <Caminho>  -> File system check 
+  
+------------------>[MONTAGEM]<-------------------------------------------
+
+Obs: Para acessar precisa montar a partição, indicando um ponto de montagem!
+Conceito: Funciona como um portal multidimenssional aonde link o device com o pc
+Ou seja: O arquivo esta 'Teoricamente" ali!!
+Obs: Porisso, quando for se referenciar ao DEVICE, não é esse caminho passado!
+Obs2: E sim o /dev/sdb... <---- 
+
+Ponto de montagem temporario: /mnt/
+Ponto de montagem de arquivos ja conhecidos pelo sys: /media/welbert
+ 
+
+Para montar:
+- mount <dispositivo> <ponto-de-montagem>
+
+que no caso seria:
+
+- mount /dev/sdb /media/welbert
+
+------------------>[Para verificar o ESPAÇO utilizado nas part]<---------------------
+
+
+
+
+

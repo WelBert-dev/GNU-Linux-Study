@@ -1,0 +1,61 @@
+--------------------->[PROGRAMAS PARA ADICIONAR USERS]<---------------------
+
+- adduser
+- addgroup
+- deluser (deleta user)
+- passwd (Altera a senha)
+- useradd
+- userdel
+- usermod
+- groupmod
+
+- apos adicionar alguem em algum grupo (sudo por exemplo)
+---e não precisar reiniciar o login utilizar: newgrp sudo  
+
+--------------------->[CAMINHOS DOS ARQUIVOS]<-------------------------------------
+
+/etc/passwd
+/etc/shadow
+/etc/group
+/etc/gshadow
+
+/etc/skel (ficam os arquivos que são copiados nas homes dos novos usuarios)
+OBS: Para editar esses arquivos, de maneira segura 
+(evitar 2 pessoas editando o mesmo arquivo utilizar:)
+
+- vipw
+- vigr
+- vipw -s
+- vigr -s
+
+---------------------->[PERMISSÃO DE ARQUIVOS]<------------------------------------
+
+r: Read (Leitura)      (Representado em octal por: 4)
+w: Escrita/modificação (Representado em octal por: 2)
+x: execulção           (Representado em octal por: 1)
+
+
+representação no ls -l:
+
+usuário: u | grupos: g | outros: o | todos: a
+
+ao utilizar o chmod:
+chmod 755 nome-do-arquivo (para o usuário pode tudo, porém para os grupos/outros é apenas r e x)
+
+PERMISSÃO PARA EXECUÇÃO:
+chmod u+x nome-do-arquivo (+x para permissão de execução, -x para tirar a permissão...)
+
+PARA MUDAR O DONO/GRUPO DE UM ARQUIVO UTILIZAR:
+obs: Precisa possuir permissão de escrita no arquivo! (w)
+
+chown novo-dono-do-arquivo:novo-grupo-do-arquivo nome-do-arquivo
+
+exemplo:
+
+chown welbert:welbert /home/welbert/arquivo 
+
+
+
+-------------------------------------------------------------------------------------
+
+

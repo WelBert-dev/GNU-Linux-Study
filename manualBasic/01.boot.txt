@@ -1,0 +1,82 @@
+-------------> Modelo antigo: BIOS(Basic input/output system) anos 80 <--------------
+
+-------------> Modelo novo: UEFI 
+Conceito: Faz parte do software dela a "INTELIGENCIA", ou seja:
+ela conhece o sistema de particionamento:
+GPT; DOS; FAT; PE; Secure-boot;
+
+definição:
+- GPT(GUID(Global Unique Identifiers) Partition Table) (novo método)
+---128 partições (9ZetaBytes)obs:  1ZT == 1 bilhoes de TeraBytes
+
+
+- dos(ou MBR) (método mais antigo) MBR(Master boot record)
+---4 partições (2TeraBytes)
+---setor: 0 (512 bytes)
+---nos primeiros 64bytes contém a tabela de partições (Inode) 
+---nos pŕoximos 446bytes contém uma parte do bootloader
+---nos 2bytes que faltaram contém a assinatura
+
+==============> Sequência de boot antigo (BIOS) <===========================
+
+1 - POST (Power On Self Test) trad: Teste de sí mesmo depois de ligado
+---Conceito: Faz a checagem dos componentes, se esta tudo ok com HD e etc (em caso de algum B.O sinaliza com bips (cada bip significa um B.O diferente)
+Final: Se tudo estiver OK ele da inicio no carregamento do BIOS ou UEFI
+
+2 - BIOS (Basic Input/Output System) trad: Sistema básico de entrada e saída
+---Conceito: Faz checagem das entradas e saídas, se estiver tudo OK ele busca pelo setor 0 (ou seja os primeiros bytes do HD ou outro Storage)
+Final: Se tudo estiver ok, irá carregar o MBR(Master Boot Record)
+
+3 - dos/MBR (Master Boot Record) trad:
+---Conceito: Um tipo de particionamento, capaz de fazer apenas 4 partições e armazenar no máximo 2TB (Hj em dia temos o G(GUID(Globally Unique IDentifier)Partition table) que ja tem uma capacidade superior de 9ZTB e 128 partições
+Final: Carrega os primeiros 446 bytes so disco, sendo ele o GRUB
+
+4 - GRUB (GRand Unifield Bootloader) Trad: Trata-se de um gerenciador de boot
+---Conceito: Com ele carregado, ele carrega os "Módulos GRUB" que é capaz de ler alguns tipos de arquivos (Luks criptografia de HD e etc), 
+---Responsável por carregar o initrd(initial ramdisk) que por sua vez vai criar uma partição FS VIRTUAL
+---Após carregar o initrd, o GRUB carrega também o Kernel 
+
+5 - Com o  Kernel e Initrd rodando
+---O kernel termina de montar a partição FS Virtual, e busca o script init
+---Que por sua vez carrega alguns módulos necessários para o kernel conseguir criar o sistema de arquivos real (FS REAL) (Ou seja o /)
+
+6 - Agora que ja foi criado o FS REAL, o kernel inicia o Systemd 
+---Conceito do Systemd: O systemd assume o controle assim que o kernel é ativado 
+pelo gerenciador de bootloader (Grub, tipicamente). A partir daí, 
+são carregados todos os dispositivos (placa de rede, processador gráfico etc.) 
+e processos que se iniciam com o sistema. 
+---Obs: Estes são identificados pelo PID (process identifier).
+
+7 - Por fim os serviços que foram configurados anteriormente, entram em execução (em looping) para manter o sistema em pé!
+
+=============> Sequência de boot nova: UEFI <===================================
+
+1 - POST (O mesmo processo do anterior)
+
+2 - UEFI (Contém inteligência na sua criação)
+
+3 - Em caso de secure-boot a UEFI carrega o shim
+
+4 - shim contém as assinaturas para segurança na execução do processo
+
+5 - Em alguns casos a UEFI é capaz de pular todo o processo anterior, e ja carregar o kernel!
+
+6 - GRUB 
+
+7 - Kernel
+
+=================================================================================
+POST(PowerOnSelfTest) -> Teste de sí mesmo, em caso de B.O sinaliza com bips 
+BIOS (BasicInput/OutputSystem) -> Testa entradas e saídas e etc, final: Busca o primeiro bloco (512bytes)
+MBR (MasterBootRecord)4part/2TB/GPT (GUID Partition Tables) 128part/9ZTB -> primeiros 446Bytes(Bootloader) 
+GRUB -> GUBModules(PE, Luks) -> Bootloader
+Initrd(Initial Ramdisk)FS Virtualy -> Cria a memória virtual(FS Virtual), pois o Kernel precisa do script Init para montar o FS Real
+GRUB -> Chama o Kernel
+Kernel -> 
+KernelMontaFSVirtualy ->  
+Kernel Busca pelo Init(script) -> 
+Init carrega os módulos no Kernel -> 
+Kernel Monta FSReal -> 
+Kernel roda o Systemd -> 
+Serviços(Drivers) ON -> 
+END

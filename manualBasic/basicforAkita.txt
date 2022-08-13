@@ -1,0 +1,9 @@
+O que são processos
+o que são trads
+o que é alocação de memória
+Quais os jeitos diferentes de alocar memória
+oque é um schedulers
+Quais diferentes tipos de schedulers
+Qual a diferença de um Ripper vizer e um container
+
+REGEX (Regular Expressions) 

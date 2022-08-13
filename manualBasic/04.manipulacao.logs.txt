@@ -1,0 +1,38 @@
+
+
+DICA: Para analizar se algum serviço esta ok, analizar os logs pode ajudar!!
+com o seguinte comando: grep fail syslog | grep firm 
+
+------------------->[CAMINHOS DOS LOGS]<----------------------------------------------
+
+~Servidor de syslog padrão nos GNU: programa: rsyslogd
+~Logs do sistema: /var/log
+~Logs mais 'utilizados': /var/log/syslog
+~Autenticações(usuarios que tentaram acessar/rodar um software): /var/log/auth.log
+~Logs do kernel: /var/log/kern.log
+~Logs do apt(instalações): /var/log/apt
+
+------------------>[SCRIPTS 'MANUAIS']<----------------------------------------------
+
+Conceito: Scripts feitos por você, para enviar mensagens no servidor de log:
+
+Comando/programa: logger <mensagem>
+Quando quer ver os resultados de um programa x: logger <'programa-x'>
+OBS: Utilizando crazes!
+Quando quer passar o ID do processo do programa (para facilitar a vida)
+utilizar: logger --id=$$
+Para mais informações: man logger
+
+------------------->[COMO LER OS LOGS]<----------------------------------------------
+
+Conceito: RTFL (Read the Fantastic Logs) trad: Leia os logs fantasticos
+
+ferramentas:
+grep
+tail -f (Mostra a parte final de um arquivo)
+o -f acompanha os dados sendo escritos! 
+
+------------------>[COMO PARAR O SERVIDOR DE LOG]<-----------------------------------
+
+comando/programa(tem que ser root): systemctl <start/stop> rsyslog.service 
+

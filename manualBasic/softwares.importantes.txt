@@ -1,0 +1,63 @@
+--------------->[Escritório e Produtividade]<------------------------------
+
+- LibreOffice
+- OpenOffice.org
+- Mozila Firefox
+- Chromium (FOSS do Chrome)
+- Mozila Thunderbird
+- Gedit
+
+--------------->[Gráficos e Multimídia]<-----------------------------------
+
+- GIMP (fotoshop do linux)
+- Inkscape (gráficos vetoriais)
+- Audacity (audio editor)
+- Blender (edição 3d)
+- VLC (player de vídeo/áudio)
+- Rhythmbox (player de áudio)
+
+--------------->[Ferramentas de Internet]<----------------------------------
+
+- Apache (servidor web) 
+- Nginx (servidor de web)
+- PostgreSQL (servidor de Banco de dados)
+- MySQL (Oracle) (servidor de Banco de dados)
+- MariaDB (servidor de Banco de dados)
+- Postfix (ferramenta de E-mails)
+- Deluge (ferramenta para baixar arquivos da net via torrent)
+
+--------------->[Softwares para infraestrutura de Redes]<-------------------
+
+- Samba (Compartilhar arquivos em rede LOCAL em máquinas Windows) 
+- NFS (Compartilhamento em rede com máquinas Unix)
+- OpenLDAP (Parmite a criação de usuários, para login na rede)
+- DNS BIND (Protocolo de rede, no linux é o BIND)
+- DHCP (ISCDHCP server, pacote do linux) 
+- openSSH (básicamente o ssh do shell)
+- VSFTPD (Ferramenta FTP do linux)
+
+--------------->[Gerenciamento de pacotes]<---------------------------------
+
+- dpkg (Deb, Ubuntu) 
+- apt-get (apt) (Ubuntu, Debian, Mint)
+- rpm (HeadRat)
+- yum (SentOS)
+- dnf (Fedora)
+- aptitude
+- synaptic
+
+---------------->[Linguagens de Programação]<-------------------------------
+
+- C
+- C++
+- Python
+- Java
+- PHP
+- Shell Scripting
+- Perl
+- Lua
+- Haskell
+- Google Go
+- Ruby
+- R
+----------------------------------------------------------------------------

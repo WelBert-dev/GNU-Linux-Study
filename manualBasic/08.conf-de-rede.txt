@@ -1,0 +1,84 @@
+-------------->[Detectando os dispositivos conectados ao PCI]<--------------------------------------------------------
+lspci
+
+PARA vizualizar CABO plugado ao barremento (Ethernet): 
+lspci -nnkd::0200
+
+PARA vizualizar placa WIRELESS:
+lspci -nnkd::0280
+
+
+-------------->[Detectando os dispositivos conectados ao USB]<--------------------------------------------------------
+lsusb
+
+PARA vizualizar:
+lsusb -tv
+
+-------------->[Configurando a rede]<--------------------------------------------------------
+Obs: rever a playlist de rede: https://github.com/kretcheu/dicas/blob/master/videos.redes.md
+Obs: para vizualizar o ip colorido, utilizar -c
+
+PARA vizualizar os dispositivos que estão habilitados (UP/Down) on/off:
+ip link (ou ip l)
+
+PARA vizualizar o endereço ip ou macaddress:
+ip address (ou ip a)
+
+PARA vizualizar a rota (gateway) da rede:
+ip route (ou ip r)
+
+EQUIVALENTES do "ip" porém para wifi:
+
+iw 
+iwconfig 
+
+PARA scannear infos das redes wireless pŕoximas:
+iw dev nome-da-rede(wlo1) scan
+
+
+-------------->[Verificando conectividade]<--------------------------------------------------------
+Conceito: Ping envia pacotes ICMP Request e recebe ICMP Response
+
+ping -c quantidade-de-pacotes ip-destino
+
+
+
+-------------->[Resolução de Nomes]<--------------------------------------------------------
+CAMINHO aonde contém as listas de "provedores de DNS": 
+/etc/resolv.conf
+
+PARA resolver utilizar: 
+host dominio-de-dns
+
+obs: O host vai consultar o caminho acima, e verificar neles os dominios
+buscados!
+-------------->[Perfil servidor/CAMINHO]<--------------------------------------------------------
+Conceito: As configurações não são mudadas frequentemente!
+
+então pode ser alterado pelo CAMINHO em (PCS):
+/etc/network/interfaces
+Obs: ao alterar para recarregar: systemctl restart networking.service
+
+em NOTEBOOK:
+Conceito: As configurações vivem mudando, pois é portátil!
+
+então pode-se utilizar o programa:
+Network-manager (Possuí interface gráfica e via prompt)
+Wicd
+
+NOVO (derivado so Arch linux)
+Netctl (perfis) 
+
+
+-------------->[Perfil NOTEBOOK]<--------------------------------------------------------
+Network-manager
+
+Modo TEXTO: nmtui (network manager terminal user interface)
+Para "selecionar" uma rede no nmtui utilizar: TAB
+Para "Editar as opções ao lado" no nmtui utilizar: ENTER
+
+
+Network-manager Interface Gráfica:
+
+
+---------------------------------------------------------------------------------

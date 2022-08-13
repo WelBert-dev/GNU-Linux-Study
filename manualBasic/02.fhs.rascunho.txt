@@ -1,0 +1,31 @@
+FHS (File Hierarchy Standard) -> Sistema hierarquico de diretórios linux:
+
+- / -> Raiz do sistema
+
+diretórios filho (subdiretórios do /):
+
+- /proc (process) -> processos do sistema
+- /dev -> Dispositivos (HD, SSD, Pendrive...)
+- /boot -> Kernel, initrd, informações e arquivos de config do grub... 
+- /bin -> binários (Essenciais para o sistema) 
+- /sbin -> binários adm
+- /lib (library) -> bibliotecas  (utilizadas pelos binários)
+- /etc -> arquivos de configuração dos programas em geral
+- /media -> removiveis (ponto de montagem)
+- /mnt -> temporários (ponto de montagem temporaria; podem ser dispositivos de rede e etc..)
+- /root -> usuário root
+- /home -> usuários da máquina
+- /tmp -> temporários (temporários dos programas ou seja: arquivos que no próximo boot, podem ser apagados)
+- /var -> variável (Ou seja, arquivos de servidores web costumam ser guardados neste diretório)
+---/var/log -> aonde ficam os logs das atividades dos programas
+
+
+binários "não essenciais", programas que não fazem parte do sistema em sí:
+
+- /usr/bin -> binários
+- /usr/sbin -> binários adm
+- /usr/lib -> bibliotecas utilizadas por esses binários
+- /usr/share -> independente (ou seja: independente do sistema se é 32 ou 64bits e ai por diante, os arquivos aqui guardados não depênde disto, como por exemplo manuais de uso, independente da arquitetura do sistema, a utilidade é a mesma!)
+---/usr/share/doc -> documentação
+---/usr/share/man -> manuais
+

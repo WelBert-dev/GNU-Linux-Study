@@ -1,0 +1,90 @@
+pacotes necessários: wifite bully reaver hcxdumptool hcxtools
+obs error wifite: /usr/share/doc/wireshark-common/README.Debian.gz
+
+Fonte: https://www.youtube.com/watch?v=QB8xJzW_KMY
+Autor: Paulo Kretcheu
+Data public: 17 nov 2020
+
+----------------->[CONCEITOS]<-----------------------------------------------------
+Wi-fi -> Frequências:
+2,4 Ghz (Normalmente)
+5 Ghz (Tecnologia nova)
+
+Padrões globais adotados:
+IEEE 802-11 a,b,g,n
+
+Tipos de Protocolos Criptografado:
+- WEP(Wired Equivalent Privacy): Antigo, baixa segurança!
+---Chave criptográfica: Todo tráfego
+---Captura minutos: Usuário válido
+---Obs: Em poucos minutos interceptando o tráfego, é possível quebra-lo
+
+
+
+- WAP(Wi-fi Protected Access): Mais moderno, mais seguro que o WEP
+---TKIP <- Temporal key integrity Protocol: Chave cript muda conforme time
+---PSK <- Pre shared key: Chave previamente compartilhada
+
+
+
+- WAP2: Melhor que o primeiro
+---AES <- Advanced Encryption Standard: Melhorias do TKIP
+---PSK <-Pre shared key: Chave previamente compartilhada 
+------Conceito PSK:
+------"Aperto de mãos de 4 passos" entre o pc e o roteador: Handshake 4 passos
+------Obs: A criptografia só se da durante esses 4 passos!! passando por isso:
+------O roteador manda a chave criptografica para o requisitante!
+---------Obs2: A chave criptográfica fica mudando a cada 300s (5 minutos)
+------------ Mandando assim, para o requisitante
+
+EIS QUE SURGE O WPS(Wi-fi Protected Setup) protocol:
+Conceito: bOTÃO (PIN) no roteador com objetivo de: Alterar a PSK!
+---Enviando assim a nova chave criptografica para o PC
+Obs: Ao adotar essa tecnologia surgiram novas vulnerabilidades!! 
+
+
+
+- WAP-3: Mais moderno ainda, logo o mais seguro de todos (até agr)
+---
+
+----------------->[PROTOCOLOS]<-----------------------------------------------------
+
+----------------->[SEGURANÇA]<-----------------------------------------------------
+Protocolos -> Algoritmos
+
+VULNERABILIDADE NOVA WAP2: "key replay attack" -> KRACK
+---OBS: Vulnerabilidade no PROTOCOLO WAP2
+------Não se descobre a PSK, más consegue decriptografar parte do tráfego 
+------Fazendo assim surgir a WPA-3!
+
+----------------->[INSEGURANÇAS]<----------------------------------------------
+Vulnerabilidades
+
+Chave padrão
+Chave fraca <- Brute-force
+Handshake NÂO há como evitar!
+Usuário <- desconhecimento  
+
+WPS: 
+- Pixie-dust
+- PIN
+
+----------------->[PROGRAMAS]<-----------------------------------------------------
+aircrack-ng (pacote de programas)
+---wifite -> Feito em python, utiliza das ferramentas do aircrack-ng
+------Ferramentas utilizadas: reaver, bully, pyrit, hcxdumptool, hcxpcaptool
+
+De posse do Handshake:
+---john -> john the ripper: Apartir de um diciónario faz brute-force
+---Hashcat: Apartir de um dicionário faz brute-force
+
+o termo utilizado ao utilizar wifi dos outros é:
+Piggybacking -> "Carregar nas costas"
+
+
+
+
+----------------->[]<-----------------------------------------------------
+
+----------------->[]<-----------------------------------------------------
+

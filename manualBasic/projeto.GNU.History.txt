@@ -1,0 +1,24 @@
+- Projeto GNU (Gnu's Not Unix)
+- Criador por: Richard Stallman
+- No ano de: 1983
+
+- 4 Liberdades:
+
+- 0: Execultar, da maneira que desejar
+- 1: Estudar, podendo modifica-lo como preferir
+- 2: Redistribuir cópias, para que a sociedade também se beneficie
+- 3: Distribuir cópias modificadas, passando em diante as mesmos 4 liberdades que a ti foram impostas!
+
+- Fundação FSF (Free Software Fundation)
+- Mantém o Projeto GNU
+- Fundado em 1985
+- Objetivo, Dar continuidade no projeto GNU 
+
+- Licensa GPL (Global Public License)
+- Objetivo: Documento, com objetivo de garantir que Softwares denominados "Livres" devem seguir as 4 liberdades!
+
+
+- FOSS (Free Oppen Source Software)
+- FLOSS (Free/Libre Oppen Source Software) <- Criado pelo FSF com objetivo de reforçar a ideia de "Livre" ao invéz de "Grátis)
+
+- Free expresion, not "Free Beer" (Liberdade de espressão, não serveja grátis) Free de Freedon <----
