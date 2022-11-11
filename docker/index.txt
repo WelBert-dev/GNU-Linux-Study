@@ -1,0 +1,37 @@
+Data: 11/11/2022 
+Objetivo: Introdução ao docker
+Link: https://www.youtube.com/watch?v=RE31GWJGkwA  <--- Parei em 14:00
+
+
+
+----> O Docker possui basicamente 3 modulos sendo eles: Docker Client, Docker Host e Registry
+- obs: Ao instalar o docker ja instala esses dois pacotes (client e host)
+
+---> Docker Client: 
+- Conceituando: Docker Client é basicamnete a linha de comando, é o "maneger" do docker em sí por linha de comando.
+exemplo de utilização:
+
+$ docker ps
+$ docker pull
+$ docker run 
+
+- Assim podemos 
+
+---> Docker Host: (Docker daemon) 
+- Conceituando: Docker Host é o gerenciador de imagens docker, ou seja é aonde os container estão rodando em sí
+Ou seja, ao rodar o client ele chama o docker host (daemon), interagindo assim diretamento com ele.
+
+- Por debaixo dos panos esta rolando o seguinte, ao rodar docker ..., a linha de comando manipula o docker.service (host/daemon)
+- Serviço esse: systemctl status docker
+- Caminho do daemon: /usr/bin/dockerd 
+
+----> Dando permissão no grupo docker: 
+$ sudo usermod -a -G docker <usuário>
+
+
+
+
+
+
+
+
