@@ -1,0 +1,5 @@
+Objetivo: Manter um histórico dos comandos interessantes e etc...
+$: Não precisa ser sudo, #: Precisa ser sudo
+
+---> verificar armazenamento pelo terminal observação humana:
+$ du -cks * -h | sort -hr | head
