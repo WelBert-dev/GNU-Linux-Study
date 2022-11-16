@@ -24,9 +24,61 @@ Ou seja, ao rodar o client ele chama o docker host (daemon), interagindo assim d
 - Por debaixo dos panos esta rolando o seguinte, ao rodar docker ..., a linha de comando manipula o docker.service (host/daemon)
 - Serviço esse: systemctl status docker
 - Caminho do daemon: /usr/bin/dockerd 
+- Caminho das imagens Empilhadas: /var/lib/docker
+
+- É Possível tambem conversar com outros containers rede a fora (por VPN e etc)
+para isto basta configurar o IP destivo e realizar os mesmos comandos local, porém afetando remotamente.
 
 ----> Dando permissão no grupo docker: 
 $ sudo usermod -a -G docker <usuário>
+$ cat /etc/group
+
+
+---> Registry: Repositório de imagens docker (servidor em nuvem que possui varias imagens, e o docker daemon baixa elas de um registry)
+- Mais comum: dockerhub (https://hub.docker.com/) 
+- podemos ter imagens de: nginx, redis, centos dentre outros privados.
+
+
+
+--------> Fluxograma de criação de imagem docker "Por debaixo dos panos":
+
+
+[DockerFile] => [Imagem] => [Container]
+
+
+DockerFile: Arquivo de texto contendo as instruções/configurações para o docker, aonde ele lê e cria a imagem de acordo com elas:
+    - from: Indica apartir de qual imagem, a imagem base.
+    - run: Comandos que seram executados "dentro" desta imagem, ou seja aqui é aonde se instala pacotes extras, permissões e etc sobre ela. (Antes de subir a aplicação/rodar o container em si)
+    - copy: Copiar arquivos da maquina corrente (a qual esta rodando esse docker build) para dentro dessa imagem/s.o
+    - env: Declara variáveis de ambiente.
+    - cmd: Qual comando sera executado quando rodar docker run (ou seja, quando rodar a imagem/container em si).
+    - Dentre outros...
+    
+    
+Imagem: Ao criar essa imagem com o dockerfile ele vai empilhando em camadas, ou seja from é a imagem base, depois roda outra instrução e empilha...
+essa imagem é R.O ou seja readonly, ao criar um container ele copia apartir desta imagem R.O e cria mais uma camada, porém dessa vez R.W (leitura e escrita)
+- Vantagens: Poder criar varias imagens apartir desta, e todas contendo as mesmas configurações/estado inicial.
+
+Container: Após criado a imagem (definido as configurações em Dockerfile) e rodado a mesma, podemos finalmente criar o container e rodar a imagem criada anteriormente. (Obs: Lembrar de expor a porta no Dockekfile, para que acontece um "Mapeamento" e assim ser possível acessar a aplicação com -P).
+
+Principais comandos:
+
+$ docker run -d -P <imagem> 
+$ docker ps -> Lista os processos ou seja ou docker que estão rodando.
+$ docker exec <id-container> ls / 
+$ docker logs <id-container> -f 
+
+Tachar o shell atual dentro do container, assim não precisa ficar passando o comando anterior docker exec...
+
+$ docker exec -it <id-container> bash 
+
+
+
+
+
+
+
+
 
 
 
