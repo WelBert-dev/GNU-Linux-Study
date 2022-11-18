@@ -1,5 +1,22 @@
 Objetivo: Manter um histórico dos comandos interessantes e etc...
 $: Não precisa ser sudo, #: Precisa ser sudo
 
----> verificar armazenamento pelo terminal observação humana:
+------------------------------------------- // -----------------------------------------------------------------
+
+---> Verificações nas placas de rede, afim de analisar se tem suporte para GB Ethernet (Ajudando Murilo na empresa).
+
+- Binário para verificar as placas de rede: "# sudo lshw -C network"
+- Binário para administrar as mesmas: "$ ethtool <logical name>" <- Esse lógical name é possível pegar com o comando a cima (obs: não é um binário padrão, deve-se instala-lo)
+
+- Obs descoberta: O Docker virtualiza uma placa ethernet gigabit (10Gbit), 
+para verificação foi utilizado esses binários e stop no service do docker
+(#sudo systemctl stop docker.socket docker.service)
+ao parar o serviço e re-executar o comando "# sudo lshw -C network" esse placa "sumiu" da listagem..
+Murilo deduziu que seria isso mesmo, e foi comprovado!
+Assim é possível analisar qual é a placa "real" presente no PC! 
+
+------------------------------------------- // 11/11/2022 -----------------------------------------------------------------
+---> verificar armazenamento pelo terminal observação humana (Murilo propos porém sem incrementos):
 $ du -cks * -h | sort -hr | head
+
+
