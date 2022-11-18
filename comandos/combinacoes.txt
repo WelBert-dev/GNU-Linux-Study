@@ -1,7 +1,7 @@
 Objetivo: Manter um histórico dos comandos interessantes e etc...
 $: Não precisa ser sudo, #: Precisa ser sudo
 
-------------------------------------------- // -----------------------------------------------------------------
+------------------------------------------- // 08/11/2022 -----------------------------------------------------------------
 
 ---> Verificações nas placas de rede, afim de analisar se tem suporte para GB Ethernet (Ajudando Murilo na empresa).
 
@@ -16,7 +16,8 @@ Murilo deduziu que seria isso mesmo, e foi comprovado!
 Assim é possível analisar qual é a placa "real" presente no PC! 
 
 ------------------------------------------- // 11/11/2022 -----------------------------------------------------------------
+
 ---> verificar armazenamento pelo terminal observação humana (Murilo propos porém sem incrementos):
 $ du -cks * -h | sort -hr | head
 
-
+------------------------------------------- // ... -----------------------------------------------------------------
