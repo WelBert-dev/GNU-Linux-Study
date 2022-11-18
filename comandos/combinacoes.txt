@@ -12,6 +12,10 @@ $: Não precisa ser sudo, #: Precisa ser sudo
 para verificação foi utilizado esses binários e stop no service do docker
 (#sudo systemctl stop docker.socket docker.service)
 ao parar o serviço e re-executar o comando "# sudo lshw -C network" esse placa "sumiu" da listagem..
+- Além disso em casos da possíbilidade de outros apps simularem o mesmo, é possível analisar por meio do comando 
+"$ ethtool <nome lógico>" para saber se é "fake" as informações provavelmente estaram incompletas, 
+diferente de uma placa real, pois contém mais meta dados sobre.. 
+
 Murilo deduziu que seria isso mesmo, e foi comprovado!
 Assim é possível analisar qual é a placa "real" presente no PC! 
 
